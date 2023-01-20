@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List | Portfolio</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header-wrapper">
+        <div class="container">
+            <header class="header">
+                <div class="header-title">
+                    <div class="header-title-logo">
+                        <img src="img/Header-logo.svg" alt="logo">
+                    </div>
+
+                    <span class="header-title-logo-text">to<span class="header-title-logo-text-inner">do</span></span>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <main class="main">
+                <form action="" class="main-form">
+                    <input type="text" class="main-form-input" placeholder="Type a new task">
+                    <button type="submit" class="main-form-button"><span>Add</span><img src="img/Main-add.svg" alt="add_icon"></button>
+                </form>
+
+                <div class="main-info">
+                    <div class="main-info-added">
+                        <span class="main-info-added-text">Added Tasks</span>
+                        <span class="main-info-added-quantity">0</span>
+                    </div>
+
+                    <div class="main-info-completed">
+                        <span class="main-info-completed-text">Completed</span>
+                        <span class="main-info-completed-quantity">0</span>
+                    </div>
+                </div>
+
+                <div class="main-empty">
+                    <span><img src="img/Main-list.svg" alt="list_icon"></span>
+                    <p><span>You have no created tasks yet</span><br>Add tasks and organize your doings</p>
+                </div>
+
+                <div class="main-tasks">
+                    <ul class="main-tasks-list">
+                        <li class="main-tasks-list-item">
+                            <span class="main-tasks-list-item-state"><img src="img/Main-state.svg" alt="state_icon"></span>
+                            <p class="main-tasks-list-item-state-text">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                            <span class="main-tasks-list-item-delete"><img src="img/Main-delete.svg" alt="delete_icon"></span>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+</body>
+</html>
