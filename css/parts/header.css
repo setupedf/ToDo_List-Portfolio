@@ -1,0 +1,26 @@
+.header-wrapper {
+    background-color: #0D0D0D;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 72px 0 80px 0;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+}
+
+.header-title-logo-text {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+    color: #4EA8DE;
+    margin-left: 12px;
+}
+
+.header-title-logo-text-inner {
+    color: #5E60CE;
+}

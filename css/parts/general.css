@@ -1,0 +1,33 @@
+.container {
+    max-width: 736px;
+    margin: 0 auto;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #191919;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input,
+button {
+    font-family: 'Inter', sans-serif;
+    border: none;
+    outline: none;
+}

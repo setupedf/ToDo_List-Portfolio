@@ -8,18 +8,22 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="header-wrapper">
         <div class="container">
             <header class="header">
-                <div class="header-title">
+                <a href="" class="header-title">
                     <div class="header-title-logo">
                         <img src="img/Header-logo.svg" alt="logo">
                     </div>
 
                     <span class="header-title-logo-text">to<span class="header-title-logo-text-inner">do</span></span>
-                </div>
+                </a>
             </header>
         </div>
     </div>
@@ -29,7 +33,7 @@
             <main class="main">
                 <form action="" class="main-form">
                     <input type="text" class="main-form-input" placeholder="Type a new task">
-                    <button type="submit" class="main-form-button"><span>Add</span><img src="img/Main-add.svg" alt="add_icon"></button>
+                    <button type="submit" class="main-form-button"><span class="main-form-button-text">Add</span><img src="img/Main-add.svg" alt="add_icon"></button>
                 </form>
 
                 <div class="main-info">
@@ -45,8 +49,8 @@
                 </div>
 
                 <div class="main-empty">
-                    <span><img src="img/Main-list.svg" alt="list_icon"></span>
-                    <p><span>You have no created tasks yet</span><br>Add tasks and organize your doings</p>
+                    <span class="main-empty-icon"><img class="main-empty-icon-img" src="img/Main-list.svg" alt="list_icon"></span>
+                    <p class="main-empty-text"><span class="main-empty-text-inner">You have no created tasks yet</span><br>Add tasks and organize your doings</p>
                 </div>
 
                 <div class="main-tasks">
