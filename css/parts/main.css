@@ -90,10 +90,19 @@
     line-height: 22px;
     color: #808080;
     margin-top: 16px;
+    
 }
 
 .main-empty-text-inner {
     font-weight: 700;
+}
+
+.main-tasks {
+    visibility: hidden;
+}
+
+.main-tasks-list-item:nth-child(1) {
+    display: none;
 }
 
 .main-tasks-list-item {
@@ -110,11 +119,18 @@
 }
 
 .main-tasks-list-item-state-text {
-    align-self: center;
+    /* align-self: center; */
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #F2F2F2;
+    flex-grow: 1;
+    padding: 16px 0;
+    max-width: 632px;
+}
+
+.main-tasks-list-item-state-text:hover {
+    text-decoration-line: line-through;
 }
 
 .main-tasks-list-item-delete {
