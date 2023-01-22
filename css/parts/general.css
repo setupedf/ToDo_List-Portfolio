@@ -2,6 +2,11 @@
     max-width: 736px;
     margin: 0 auto;
 }
+@media (max-width: 766px) {
+    .container {
+        padding: 0 30px;
+    }
+}
 
 *, *::after, *::before {
     box-sizing: border-box;
@@ -10,6 +15,7 @@
 body {
     font-family: 'Inter', sans-serif;
     background: #191919;
+    min-width: 220px;
 }
 
 a {

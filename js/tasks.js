@@ -151,6 +151,7 @@ function changeTaskState(task, text) {
         completedQuantity--
 
         text.style.textDecorationLine = 'none'
+        text.style.color = '#F2F2F2'
     }
     else if (task.getAttribute('state') === 'uncompleted') {
         
@@ -163,7 +164,7 @@ function changeTaskState(task, text) {
         completedQuantity++
 
         text.style.textDecorationLine = 'line-through'
-
+        text.style.color = '#808080'
     }
 
     updateTotal()

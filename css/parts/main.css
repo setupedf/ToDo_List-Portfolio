@@ -36,6 +36,11 @@
     line-height: 22px;
     color: #F2F2F2;
     padding: 16px;
+    transition: background 300ms ease;
+}
+
+.main-form-button:hover {
+    background: #2485bd;
 }
 
 .main-form-button-text{
@@ -112,6 +117,11 @@
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     margin-bottom: 12px;
+    transition: background 300ms ease;
+}
+
+.main-tasks-list-item:hover {
+    background: #333333;
 }
 
 .main-tasks-list-item-state {
@@ -135,4 +145,44 @@
 
 .main-tasks-list-item-delete {
     padding: 21px 21.52px 37px 18px;
+}
+
+@media (max-width: 436px) {
+    .main-form {
+        justify-content: center;
+    }
+
+    .main-form-input {
+        margin-right: 0;
+    }
+
+    .main-form-button {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-form-input {
+        min-width: 0;
+        font-size: 12px;
+    }
+
+    .main-form-button {
+        font-size: 12px;
+    }
+
+    .main-info {
+        flex-direction: column;
+    }
+
+    .main-info-added {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-info-completed {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+    }
 }
