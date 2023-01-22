@@ -28,7 +28,7 @@ form.addEventListener('submit', e => {
 
     input.value = ''
 
-    console.log(taskId + ' --- ' + taskValue)
+    // console.log(taskId + ' --- ' + taskValue)
 
     // Add task id to array
     addTaskIdToArray(taskId)
