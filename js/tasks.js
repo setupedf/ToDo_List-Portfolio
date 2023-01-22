@@ -6,12 +6,12 @@ const emptyBlock = document.querySelector('.main-empty')
 const tasks = document.querySelector('.main-tasks')
 const list = tasks.querySelector('.main-tasks-list')
 const addedQuantity = document.querySelector('.main-info-added-quantity')
-const completedQuantity = document.querySelector('.main-info-completed-quantity')
+const completedQuantityTotal = document.querySelector('.main-info-completed-quantity')
 
 // Variables
 let taskIdArray = []
-
-// console.log(taskTemplate)
+let queuedQuantity = 0
+let completedQuantity = 0
 
 // Event Listeners
 form.addEventListener('submit', e => {
@@ -45,12 +45,18 @@ form.addEventListener('submit', e => {
     // Add Event Listeners to new task
     addEventListenersToTask(newTask)
 
+    // Increment queuedQuantity
+    queuedQuantity++
+
+    updateTotal()
+
 })
 
 // Functions
 function addTaskToDOM(taskId, taskValue) {
     const newTask = taskTemplate.cloneNode(true)
     newTask.setAttribute('task-id', taskId)
+    newTask.setAttribute('state', 'uncompleted')
 
     const taskText = newTask.querySelector('.main-tasks-list-item-state-text')
     taskText.textContent = taskValue
@@ -72,16 +78,25 @@ function addEventListenersToTask(newTask) {
     deleteIcon.addEventListener('click', () => {
         deleteTaskFromDom(newTask)
         deleteTaskIdFromArray(newTask.getAttribute("task-id"))
+        
         decrementAddedTasks()
         checkTasksExistence()
+        
+        queuedQuantity--
+
+        if (newTask.getAttribute('state') == 'completed') {
+            completedQuantity--
+        }
+
+        updateTotal()
     })
 
     stateIcon.addEventListener('click', () => {
-        markTaskAsCompleted(newTask)
+        changeTaskState(newTask, text)
     })
-
+    
     text.addEventListener('click', () => {
-        markTaskAsCompleted(newTask)
+        changeTaskState(newTask, text)     
     })
 }
 
@@ -110,3 +125,46 @@ function incrementAddedTasks() {
 function decrementAddedTasks() {
     addedQuantity.textContent = Number(addedQuantity.textContent) - 1
 }
+
+
+function updateTotal() {
+    if (taskIdArray.length <= 0) {
+        queuedQuantity = '0'
+        completedQuantityTotal.textContent = queuedQuantity
+    } else {
+        completedQuantityTotal.textContent = completedQuantity + ' из ' + queuedQuantity 
+    }
+
+}
+
+function changeTaskState(task, text) {
+    const img = task.querySelector('.main-tasks-list-item-state-img')
+    
+    if (task.getAttribute('state') === 'completed') {
+        
+        // Change img link to mark the task as uncompleted
+        img.setAttribute('src', 'img/Main-state.svg')
+    
+        task.setAttribute('state', 'uncompleted')
+    
+        // Increment completed quantity
+        completedQuantity--
+
+        text.style.textDecorationLine = 'none'
+    }
+    else if (task.getAttribute('state') === 'uncompleted') {
+        
+        // Change img link to mark the task as completed
+        img.setAttribute('src', 'img/Main-completed.svg')
+    
+        task.setAttribute('state', 'completed')
+    
+        // Increment completed quantity
+        completedQuantity++
+
+        text.style.textDecorationLine = 'line-through'
+
+    }
+
+    updateTotal()
+} 
